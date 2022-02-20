@@ -4,14 +4,20 @@ $(function () {
         })
         .css('opacity', .2)
         .animate({
+            transform: 'scale(1)'
+        })
+        .animate({
+            transform: 'scale(1.2)'
+        })
+        .animate({
             opacity: .8,
             transform: 'scale(1)'
         },1000, 'easeInQuad', function () {
             //code to run after war animate completes
-            $('div#dustPuffs').show().each (function () {
+            $('#dustPuffs').show().each (function () {
                 $(this).animate({
                     opacity: .2,
-                    transform: 'scale("horizontal: 300", "vertical: 200")'
+                    transform: 'scale(2,3)'
                 }, 1500, 'easeInQuad')
                     .fadeOut(800)
                     .css({
@@ -20,7 +26,7 @@ $(function () {
                     }).promise().done(function () {
                     $('p.textDrop').animate({
                         width: 500
-                    }, 300, 'easeOutBounce')
+                    }, 300, 'easeOutElastic')
                 })
             })
         })
